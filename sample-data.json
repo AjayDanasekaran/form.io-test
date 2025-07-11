@@ -1,0 +1,180 @@
+{
+  "forms": [
+    {
+      "formId": "FORM_GUEST_INTAKE",
+      "version": 1,
+      "name": "Guest Intake Form",
+      "context": "guest_form",
+      "isActive": true,
+      "createdBy": "admin",
+      "fields": [
+        {
+          "fieldId": "name",
+          "label": "Full Name",
+          "type": "text",
+          "required": true,
+          "prepopulateFromPrevious": true
+        },
+        {
+          "fieldId": "email",
+          "label": "Email Address",
+          "type": "email",
+          "required": true,
+          "prepopulateFromPrevious": true
+        },
+        {
+          "fieldId": "phone",
+          "label": "Phone Number",
+          "type": "tel",
+          "required": false,
+          "prepopulateFromPrevious": true
+        },
+        {
+          "fieldId": "dateOfBirth",
+          "label": "Date of Birth",
+          "type": "date",
+          "required": true,
+          "prepopulateFromPrevious": true
+        }
+      ]
+    },
+    {
+      "formId": "FORM_CONSENT_LASER",
+      "version": 1,
+      "name": "Laser Treatment Consent Form",
+      "context": "service_form",
+      "isActive": true,
+      "createdBy": "admin",
+      "fields": [
+        {
+          "fieldId": "patientName",
+          "label": "Patient Name",
+          "type": "text",
+          "required": true,
+          "prepopulateFromPrevious": true
+        },
+        {
+          "fieldId": "treatmentType",
+          "label": "Treatment Type",
+          "type": "dropdown",
+          "required": true,
+          "prepopulateFromPrevious": false,
+          "options": ["Laser Hair Removal", "Laser Skin Treatment", "Laser Tattoo Removal"]
+        },
+        {
+          "fieldId": "consent",
+          "label": "I consent to the laser treatment",
+          "type": "checkbox",
+          "required": true,
+          "prepopulateFromPrevious": false
+        },
+        {
+          "fieldId": "emergencyContact",
+          "label": "Emergency Contact",
+          "type": "text",
+          "required": true,
+          "prepopulateFromPrevious": true
+        }
+      ]
+    },
+    {
+      "formId": "FORM_FEEDBACK",
+      "version": 1,
+      "name": "Service Feedback Form",
+      "context": "feedback_form",
+      "isActive": true,
+      "createdBy": "admin",
+      "fields": [
+        {
+          "fieldId": "rating",
+          "label": "Overall Rating",
+          "type": "dropdown",
+          "required": true,
+          "prepopulateFromPrevious": false,
+          "options": ["1 - Poor", "2 - Fair", "3 - Good", "4 - Very Good", "5 - Excellent"]
+        },
+        {
+          "fieldId": "comments",
+          "label": "Additional Comments",
+          "type": "textarea",
+          "required": false,
+          "prepopulateFromPrevious": false
+        },
+        {
+          "fieldId": "recommend",
+          "label": "Would you recommend our service?",
+          "type": "radio",
+          "required": true,
+          "prepopulateFromPrevious": false,
+          "options": ["Yes", "No", "Maybe"]
+        }
+      ]
+    }
+  ],
+  "formAssignments": [
+    {
+      "formId": "FORM_GUEST_INTAKE",
+      "context": "guest_form",
+      "serviceId": null,
+      "centerId": null
+    },
+    {
+      "formId": "FORM_CONSENT_LASER",
+      "context": "service_form",
+      "serviceId": "S_LASER_HR",
+      "centerId": "C_NY_01"
+    },
+    {
+      "formId": "FORM_CONSENT_LASER",
+      "context": "service_form",
+      "serviceId": "S_LASER_HR",
+      "centerId": null
+    },
+    {
+      "formId": "FORM_CONSENT_LASER",
+      "context": "service_form",
+      "serviceId": null,
+      "centerId": "C_NY_01"
+    },
+    {
+      "formId": "FORM_FEEDBACK",
+      "context": "feedback_form",
+      "serviceId": null,
+      "centerId": null
+    }
+  ],
+  "formSubmissions": [
+    {
+      "submissionId": "SUB_1703123456789_abc123",
+      "formId": "FORM_GUEST_INTAKE",
+      "version": 1,
+      "guestId": "GUEST_123",
+      "appointmentId": null,
+      "centerId": "C_NY_01",
+      "submittedAt": "2023-12-21T10:30:00Z",
+      "submittedBy": "mobile_app",
+      "data": {
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "phone": "+1-555-0123",
+        "dateOfBirth": "1990-05-15"
+      }
+    },
+    {
+      "submissionId": "SUB_1703123456790_def456",
+      "formId": "FORM_CONSENT_LASER",
+      "version": 1,
+      "guestId": "GUEST_123",
+      "appointmentId": "APPT_789",
+      "centerId": "C_NY_01",
+      "submittedAt": "2023-12-21T11:00:00Z",
+      "submittedBy": "mobile_app",
+      "data": {
+        "patientName": "John Doe",
+        "treatmentType": "Laser Hair Removal",
+        "consent": true,
+        "emergencyContact": "Jane Doe"
+      }
+    }
+  ]
+} 
